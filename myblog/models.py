@@ -36,7 +36,9 @@ class ReadingList(models.Model) :
     
 class Book(models.Model) :
 
+    # title = models.OneToOneField(ReadingList, on_delete=models.CASCADE)
     title = models.ForeignKey('ReadingList', on_delete=models.CASCADE)
+    
 
     writer = models.CharField(max_length=50)
 
