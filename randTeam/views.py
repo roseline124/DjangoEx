@@ -5,7 +5,7 @@ from .forms import FileForm
 # Create your views here.
 def index(request) :
     if request.method == "POST" :
-        form = FileForm(request.POST) 
+        form = FileForm(request.POST, request.FILES) 
 
         if form.is_valid() : 
             csv_file = form.save(commit=False)

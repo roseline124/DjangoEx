@@ -1,6 +1,4 @@
 from django.db import models
-# import pandas as pd #csv_file 정리
-
 
 # Create your models here.
 class File(models.Model) : 
@@ -17,3 +15,18 @@ class File(models.Model) :
 
         return self.course    
 
+class TimestampModel(models.Model) :
+
+    create_date = models.DateTimeField(auto_now_add=True)
+    update_date = models.DateTimeField(auto_now=True)
+
+    class Meta : 
+        abstract = True 
+
+
+class Project(TimestampModel) : 
+
+    title = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self) : 
+        return self.title
