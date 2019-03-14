@@ -1,4 +1,8 @@
 from django.db import models
+from django.utils import timezone #시간, 날짜와 관련된 모듈 
+import random 
+from django.core.exceptions import ValidationError # 
+from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 class ReadingList(models.Model) :
@@ -47,4 +51,8 @@ class Book(models.Model) :
     published_year = models.DateTimeField(blank=True)
 
     def __str__(self) :
-        return '%s | %s' % ( self.title, self.writer)
+        return '%s :  %s ' % ( self.title, self.writer)
+
+
+
+

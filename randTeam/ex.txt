@@ -1,4 +1,3 @@
-from django.db import models
 from django.utils import timezone #시간, 날짜와 관련된 모듈 
 import random 
 from django.core.exceptions import ValidationError # 
@@ -103,47 +102,3 @@ class GuessNumbers(models.Model): #슈퍼클래스 models의 하위클래스 Mod
     def __str__(self):
         return '%s - %s' % (self.name, self.text)
     # __str__ 메서드를 삽입한 이유는 이 메서드가 없으면 장고의 기본이름이 입력되기 때문입니다.
-
-
-
-
-
-class Question(models.Model) :
-
-    game = ( # 왼쪽 : 사용자 / 오른쪽 : 작성자
-        ("오버워치", "옵치" ),
-        ("배틀그라운", "배그"),
-        ("하스스톤", "하스스톤"),
-        ("히어로즈오브스톰", "히오스"), 
-    )
-
-    title = models.CharField(max_length=100)
-    writer = models.CharField(max_length=15)
-    category = models.CharField(max_length=100 ,choices=game, default="하스스톤")
-
-    content = models.TextField()
-
-    password = models.CharField(max_length=10)
-    image = models.ImageField(verbose_name="이미지") 
-
-    created_date = models.DateTimeField(auto_now_add=True) #편집 불가능, 자동 생성 
-    updated_date = models.DateTimeField(auto_now=True) #자동 생성 
-
-    def __str__(self) : 
-        return "%s - %s" %(self.title, self.writer)
-
-
-# class Programmers(models.Model) : 
-
-#     teams = (
-#         ("불사르자","fire"),
-#         ("끝까지 간다", ""),
-#     )
-
-#     name = models.CharField(max_length=30)
-#     language = models.TextField()
-#     team = models.CharField(choices=)
-
-class OtherUser(models.Model) : 
-
-    question = models.ForeignKey(on_delete=models.SET_NULL)
