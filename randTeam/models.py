@@ -105,9 +105,6 @@ class GuessNumbers(models.Model): #슈퍼클래스 models의 하위클래스 Mod
     # __str__ 메서드를 삽입한 이유는 이 메서드가 없으면 장고의 기본이름이 입력되기 때문입니다.
 
 
-
-
-
 class Question(models.Model) :
 
     game = ( # 왼쪽 : 사용자 / 오른쪽 : 작성자
@@ -133,17 +130,4 @@ class Question(models.Model) :
         return "%s - %s" %(self.title, self.writer)
 
 
-# class Programmers(models.Model) : 
-
-#     teams = (
-#         ("불사르자","fire"),
-#         ("끝까지 간다", ""),
-#     )
-
-#     name = models.CharField(max_length=30)
-#     language = models.TextField()
-#     team = models.CharField(choices=)
-
-class OtherUser(models.Model) : 
-
-    question = models.ForeignKey(on_delete=models.SET_NULL)
+    

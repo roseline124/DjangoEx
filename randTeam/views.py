@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import File
+from .models import File, Question
 from .forms import FileForm
 
-# Create your views here.
+# Function Based View (FBV)
 def index(request) :
     if request.method == "POST" :
         form = FileForm(request.POST, request.FILES) 

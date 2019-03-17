@@ -1,0 +1,19 @@
+{% extends 'randTeam/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <form method="POST" action="{% url 'result'%}" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <h1>Hello World</h1> 
+        {{ form.as_table }}    
+        <br>
+        <br>
+
+            <button type="submit"> ì œì¶œí•˜ê¸° </button>                              
+
+    </form>
+    
+{% endblock %}
+
