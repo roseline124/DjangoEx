@@ -25,5 +25,6 @@ from django.urls import path, include
 urlpatterns = [
     path('', include(('myblog.urls', 'myblog'), namespace="myblog")), #include( (앱 urls.py, 앱 이름), namespace )
     path('', include(('randTeam.urls', 'randTeam'), namespace="randTeam" )),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ]

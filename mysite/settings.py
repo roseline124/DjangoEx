@@ -31,14 +31,14 @@ ALLOWED_HOSTS = ['127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'myblog',
+    'randTeam',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myblog',
-    'randTeam',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +125,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static') #개발자가 관리하는 파일
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #사용자가 업로드한 파일 관리
+
+
+LOGIN_REDIRECT_URL = '/blog/book-review'

@@ -10,6 +10,22 @@
 
 </head>
 <body>
+
+    <ul>
+        {% if user.is_active %}
+          <li><a href="{%url 'login' %}"> {{user.username}}</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+          <li><a href="{%url 'login' %}"> Login</a></li>
+          <li><a href="{% url 'admin:index' %}">Admin</a></li>
+        {% endif %}
+      </ul>
+
+      
+      
+
+
+
     
     <h2>서평 목록</h2>
 
